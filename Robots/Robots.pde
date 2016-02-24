@@ -1,21 +1,20 @@
 void setup() {
-  size(1000,700);
-  DDRobot dariusRobot = new DDRobot();
-  TMRobots timRobot = new TMRobots();
-  int x = 120;
-  int y = 30;
-  int X = 1;
-  int Y = 1;
-  
+  size(displayWidth, displayHeight);
 
-  dariusRobot.drawAt(-350+2*x,-170+2*y);
-  dariusRobot.drawAt(-350+3*x,-170+3*y);
-  dariusRobot.drawAt(-350+4*x,-170+4*y);
+  TMRobots timRobot = new TMRobots();
+  EPRobot ethanRobot = new EPRobot();
+  DHRobot danielRobot = new DHRobot();
+  BDRobot benRobot = new BDRobot();
+  DDRobot dariusRobot = new DDRobot();
+  JSSRobot smithRobot = new JSSRobot();
   
-  dariusRobot.drawAt(-350+5*x,-170+5*y);
   
-  timRobot.drawAt(100,100,1*X,1*X);
-  timRobot.drawAt(100,200,2*X,2*Y);
+  dariusRobot.drawAt(-50,-200);
+  timRobot.drawAt(50,50,.5,.5);
+  ethanRobot.drawAt(350,100,.5,.5);
+  danielRobot.drawAt(550,200,.5,.5);
+  benRobot.drawAt(750,300,.5,.5);
+  smithRobot.drawAt(1000,450,.5,.5);
    
   
  // while (counter < 5){
