@@ -13,7 +13,8 @@ JSSRobot smithRobot = new JSSRobot();
 SCRobot spencerRobot = new SCRobot();
 
 void setup() {
-  fullScreen(); //1280x800
+  //fullScreen(); //1280x800
+  size(displayWidth, displayHeight);
 }
 
 void draw() {
@@ -45,9 +46,9 @@ void draw() {
     image(img, 100, 350);
 
     //Robots
-
+//robot 1 scaling in DDRobot.pde
     rotate(.1);
-    dariusRobot.drawAt(-180, 0); //robot1
+    dariusRobot.drawAt(-180, 0); //robot1 
 
     //robot1 text
     fill(255);
@@ -84,6 +85,15 @@ void draw() {
   //background
     bg = loadImage("Bg3.jpg");
     background(bg);
+    
+    
+  //robots
+  timRobot.drawAt(540, 350, 1, 1); //robot 1
+  spencerRobot.drawAt(200, 500,5,5);//robot2
+   img = loadImage("hair.gif"); //robot2 hair
+    image(img, 100, 100);
+  
+  
   }
 }
 void keyPressed() {
