@@ -81,6 +81,7 @@ noStroke();
     text("scene2", 200, 200);
     
     //robots
+    spencerRobot.drawAt(496, 187, 0.6, 0.6);
     benRobot.drawAt(496, 187, 0.6, 0.6);
     danielRobot.drawAt(496, 187, 0.6, 0.6);
     
