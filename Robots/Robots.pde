@@ -109,7 +109,7 @@ noStroke();
   bg = loadImage("endb.jpg");
     background(bg);
   img = loadImage("end.png"); //robot2 hair
-    image(img, 550, 306);
+    image(img, 330, 372);
     
   }
   }
