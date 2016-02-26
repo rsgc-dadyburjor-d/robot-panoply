@@ -19,12 +19,14 @@ void setup() {
 }
 
 void draw() {
+  
   noStroke();
+  
   if (scene == 0) { //scene0
   bg = loadImage("endb.jpg");
     background(bg);
     img = loadImage("title.png"); //scene1 bg texture
-    image(img, 0, 0);
+    image(img, 145, 149);
    
   } else if (scene == 1) {
     //background
