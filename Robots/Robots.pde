@@ -19,13 +19,15 @@ void setup() {
 }
 
 void draw() {
-noStroke();
+  noStroke();
   if (scene == 0) { //scene0
-  bg = loadImage("title.png"); //scene1 bg texture
+  bg = loadImage("endb.jpg");
     background(bg);
-  
+    img = loadImage("title.png"); //scene1 bg texture
+    image(img, 0, 0);
+   
   } else if (scene == 1) {
-  //background
+    //background
     bg = loadImage("Bg.JPG"); //scene1 bg texture
     background(bg); //background
 
@@ -50,7 +52,7 @@ noStroke();
     image(img, 100, 350);
 
     //Robots
-//robot 1 scaling in DDRobot.pde
+    //robot 1 scaling in DDRobot.pde
     rotate(.1);
     dariusRobot.drawAt(-180, 0); //robot1 
 
@@ -76,43 +78,38 @@ noStroke();
     text("*boop*", 750, 200);
     fill(0, 102, 153, 51);
     text("*beep*", 750, 220);
-    
   } else if (scene == 2) { //scene2
-  
-  //background
+
+    //background
     bg = loadImage("Bg2.png");
     background(bg);
     text("scene2", 200, 200);
-    
+
     //robots
     spencerRobot.drawAt(379, 404, 2.9, 2.9);
     benRobot.drawAt(759, 281, 0.4, 0.4);
     danielRobot.drawAt(666, 416, 0.2, 0.2);
-    
   } else if (scene == 3) { //scene3
-  noStroke();
-  //background
+    noStroke();
+    //background
     bg = loadImage("Bg3.jpg");
     background(bg);
-    
-    
-  //robots
-  timRobot.drawAt(540, 350, 1, 1.5); //robot 1
-  spencerRobot.drawAt(200, 503,5,5);//robot2
- 
-   img = loadImage("hair.gif"); //robot2 hair
+
+
+    //robots
+    timRobot.drawAt(540, 350, 1, 1.5); //robot 1
+    spencerRobot.drawAt(200, 503, 5, 5);//robot2
+
+    img = loadImage("hair.gif"); //robot2 hair
     image(img, 550, 306);
-    
-    
   } else if (scene == 4) { //scene3
-  
-  bg = loadImage("endb.jpg");
+
+    bg = loadImage("endb.jpg");
     background(bg);
-  img = loadImage("end.png"); //robot2 hair
+    img = loadImage("end.png"); //robot2 hair
     image(img, 330, 372);
-    
   }
-  }
+}
 
 void keyPressed() {
   scene += 1;
