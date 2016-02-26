@@ -81,9 +81,9 @@ noStroke();
     text("scene2", 200, 200);
     
     //robots
-    spencerRobot.drawAt(496, 187, 0.6, 0.6);
-    benRobot.drawAt(496, 187, 0.6, 0.6);
-    danielRobot.drawAt(496, 187, 0.6, 0.6);
+    spencerRobot.drawAt(379, 404, 2.9, 2.9);
+    benRobot.drawAt(759, 281, 0.4, 0.4);
+    danielRobot.drawAt(666, 416, 0.2, 0.2);
     
   } else if (scene == 3) { //scene3
   noStroke();
