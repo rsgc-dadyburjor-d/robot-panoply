@@ -88,10 +88,10 @@ void draw() {
     
     
   //robots
-  timRobot.drawAt(540, 350, 1, 1); //robot 1
-  spencerRobot.drawAt(200, 500,5,5);//robot2
+  timRobot.drawAt(540, 350, 1, 1.5); //robot 1
+  spencerRobot.drawAt(200, 503,5,5);//robot2
    img = loadImage("hair.gif"); //robot2 hair
-    image(img, 100, 100);
+    image(img, 550, 306);
   
   
   }
