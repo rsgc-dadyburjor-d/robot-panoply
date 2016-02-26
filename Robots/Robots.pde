@@ -81,7 +81,7 @@ void draw() {
     text("scene2", 200, 200);
     
     //robots
-    benRobot.drawAt(540, 200, 3.5, 3.5);
+    benRobot.drawAt(496, 187, 0.6, 0.6);
     
   } else if (scene == 3) { //scene3
   
