@@ -2,7 +2,7 @@ class DDRobot {
 
   void DDRobot() {
   }
-  
+
   void drawAt(int x, int y) {
 
     //This Robot is BB8
@@ -22,7 +22,7 @@ class DDRobot {
     float r = 1;
 
     //Scale of bots
-    scale(.5 * r);
+    scale(1.6 * r);
 
     //Lighting, robot bloom effects
     //slightly fiddly, blur broken between layers
@@ -52,8 +52,8 @@ class DDRobot {
     ellipse(x+ 300, y+ 545, 110, 10 );
 
 
-
-    filter( BLUR, 4 );
+    pushMatrix();  // saves the current origin and rotation and blu
+    filter( BLUR, 3);
 
     //ROBOT 1 (BB8) Left
 
@@ -87,7 +87,7 @@ class DDRobot {
     arc(x+ 300, y+ 270, 175, 10, 0, PI, 0); // under arc (dark)
 
     //coloreyering
-    fill(#FC7303); //Orange ring
+    fill(#0074FF); //Orange ring
     ellipse(x+ 300, y+ 215, 50, 50);
 
     //eye
@@ -115,11 +115,11 @@ class DDRobot {
     noStroke();
 
     //centredot
-    fill(#FC7303); //orange accent 1 (outer)
+    fill(#0074FF); //accent 1 (outer)
     ellipse(x+ 300, y+ 400, 200, 200);
     fill(240); //white separator
     ellipse(x+ 300, y+ 400, 180, 180);
-    fill(#FC7303); //orange accent 2 (inner)
+    fill(#0074FF); //accent 2 (inner)
     ellipse(x+ 300, y+ 400, 140, 140);
     fill(240); //1st ring
 
@@ -131,5 +131,6 @@ class DDRobot {
     fill(220);
     ellipse(x+ 300, y+ 400, 80, 80);
     fill(190);
+    popMatrix();
   }
 }
