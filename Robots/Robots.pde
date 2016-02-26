@@ -18,7 +18,7 @@ void setup() {
 }
 
 void draw() {
-
+noStroke();
   if (scene == 1) { //scene1
   
   //background
@@ -85,7 +85,7 @@ void draw() {
     danielRobot.drawAt(496, 187, 0.6, 0.6);
     
   } else if (scene == 3) { //scene3
-  
+  noStroke();
   //background
     bg = loadImage("Bg3.jpg");
     background(bg);
