@@ -1,6 +1,6 @@
 PImage bg; //bg call
 PImage img;//image call
-int scene = 1;//scene call
+int scene = 0;//scene call
 
 //various robot call
 
@@ -19,10 +19,13 @@ void setup() {
 
 void draw() {
 noStroke();
-  if (scene == 1) { //scene1
+  if (scene == 0) { //scene0
+  bg = loadImage("title.png"); //scene1 bg texture
+    background(bg);
   
+  } else if (scene == 1) {
   //background
-    bg = loadImage("Bg.JPG"); //scene 1 bg texture
+    bg = loadImage("Bg.JPG"); //scene1 bg texture
     background(bg); //background
 
     //window
