@@ -80,6 +80,9 @@ void draw() {
     background(bg);
     text("scene2", 200, 200);
     
+    //robots
+    benRobot.drawAt(540, 200, 3.5, 3.5);
+    
   } else if (scene == 3) { //scene3
   
   //background
@@ -90,9 +93,11 @@ void draw() {
   //robots
   timRobot.drawAt(540, 350, 1, 1.5); //robot 1
   spencerRobot.drawAt(200, 503,5,5);//robot2
+ 
    img = loadImage("hair.gif"); //robot2 hair
     image(img, 550, 306);
-  
+    
+    
   
   }
 }
