@@ -15,6 +15,7 @@ SCRobot spencerRobot = new SCRobot();
 void setup() {
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
+  noStroke();
 }
 
 void draw() {
@@ -103,9 +104,16 @@ noStroke();
     image(img, 550, 306);
     
     
+  } else if (scene == 4) { //scene3
   
+  bg = loadImage("endb.jpg");
+    background(bg);
+  img = loadImage("end.png"); //robot2 hair
+    image(img, 550, 306);
+    
   }
-}
+  }
+
 void keyPressed() {
   scene += 1;
 }
