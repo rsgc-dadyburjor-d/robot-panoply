@@ -82,6 +82,7 @@ void draw() {
     
     //robots
     benRobot.drawAt(496, 187, 0.6, 0.6);
+    danielRobot.drawAt(496, 187, 0.6, 0.6);
     
   } else if (scene == 3) { //scene3
   
