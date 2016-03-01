@@ -3,7 +3,6 @@ PImage img;//image call
 int scene = 0;//scene call
 
 //various robot call
-
 TMRobots timRobot = new TMRobots();
 EPRobot ethanRobot = new EPRobot();
 DHRobot danielRobot = new DHRobot();
@@ -13,13 +12,16 @@ JSSRobot smithRobot = new JSSRobot();
 SCRobot spencerRobot = new SCRobot();
 
 void setup() {
+
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
   noStroke();
+  
 }
 
 void draw() {
   
+  // what is this noStroke call for? 
   noStroke();
   
   if (scene == 0) { //scene0
@@ -29,12 +31,12 @@ void draw() {
     image(img, 145, 149);
    
   } else if (scene == 1) {
+  
     //background
     bg = loadImage("Bg.JPG"); //scene1 bg texture
     background(bg); //background
 
     //window
-
     fill(50);
     ellipse( displayWidth/2, displayHeight/2, 1200, 1200);
     fill(100);
@@ -43,7 +45,6 @@ void draw() {
     ellipse( displayWidth/2, displayHeight/2, 1000, 1000);
 
     //background Images
-
     img = loadImage("planet1.png"); //planet
     image(img, 100, 100);
     img = loadImage("Dstar.png");//deathstar
@@ -67,10 +68,12 @@ void draw() {
     fill(0, 102, 153, 51);
     text("*beep*", 40, 180); 
 
-    rotate(-.1); //reversal
+    //reversal
+    rotate(-.1); 
 
     rotate(-.1); 
-    spencerRobot.drawAt(540, 200, 3.5, 3.5); //robot2
+    //robot2
+    spencerRobot.drawAt(540, 200, 3.5, 3.5);
 
     //robot2 text
     fill(255);
@@ -80,6 +83,7 @@ void draw() {
     text("*boop*", 750, 200);
     fill(0, 102, 153, 51);
     text("*beep*", 750, 220);
+    
   } else if (scene == 2) { //scene2
 
     //background
@@ -91,25 +95,28 @@ void draw() {
     spencerRobot.drawAt(379, 404, 2.9, 2.9);
     benRobot.drawAt(759, 281, 0.4, 0.4);
     danielRobot.drawAt(666, 416, 0.2, 0.2);
+    
   } else if (scene == 3) { //scene3
+  
     noStroke();
     //background
     bg = loadImage("Bg3.jpg");
     background(bg);
-
-
+    
     //robots
     timRobot.drawAt(540, 350, 1, 1.5); //robot 1
     spencerRobot.drawAt(200, 503, 5, 5);//robot2
 
     img = loadImage("hair.gif"); //robot2 hair
     image(img, 550, 306);
+    
   } else if (scene == 4) { //scene3
 
     bg = loadImage("endb.jpg");
     background(bg);
     img = loadImage("end.png"); //robot2 hair
     image(img, 330, 372);
+    
   }
 }
 
