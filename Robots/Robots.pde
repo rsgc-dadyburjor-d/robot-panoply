@@ -1,10 +1,11 @@
+import processing.sound.*;
+SoundFile file;
 PImage bg; //bg call
 PImage img;//image call
 int scene = 0;//scene call
 int scale = 60;
 int scale2 = 0;
 PFont font;
-
 boolean pixelMode = true;
 //robot calls
 
@@ -28,6 +29,9 @@ void setup() {
 void draw() {
 
   if (scene == 0) { //scene0
+  // Load a soundfile from the /data folder of the sketch and play it back
+  file = new SoundFile(this, "theme.m3u");
+  file.play();
 
   scale ++;
     bg = loadImage("endb.jpg");
