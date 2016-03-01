@@ -1,8 +1,12 @@
 PImage bg; //bg call
 PImage img;//image call
 int scene = 0;//scene call
+int scale = 60;
+int scale2 = 0;
+PFont font;
 
-//various robot call
+boolean pixelMode = true;
+//robot calls
 
 TMRobots timRobot = new TMRobots();
 EPRobot ethanRobot = new EPRobot();
@@ -13,28 +17,34 @@ JSSRobot smithRobot = new JSSRobot();
 SCRobot spencerRobot = new SCRobot();
 
 void setup() {
+  textMode(CENTER);
+  frameRate(600);
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
   noStroke();
+  font = createFont("galaxy.ttf", 32);
 }
 
 void draw() {
-  
-  noStroke();
-  
+
   if (scene == 0) { //scene0
-  bg = loadImage("endb.jpg");
+
+  scale ++;
+    bg = loadImage("endb.jpg");
     background(bg);
-    img = loadImage("title.png"); //scene1 bg texture
-    image(img, 145, 149);
-   
+    img = loadImage("logo.png"); //scene1 bg texture
+  imageMode(CENTER);
+    img.resize(40500 / scale  , 40500 / scale );
+    image(img, displayWidth/2, displayHeight/2);
+    imageMode(CORNER);
+    
   } else if (scene == 1) {
+    scale ++;
     //background
     bg = loadImage("Bg.JPG"); //scene1 bg texture
     background(bg); //background
 
     //window
-
     fill(50);
     ellipse( displayWidth/2, displayHeight/2, 1200, 1200);
     fill(100);
@@ -43,14 +53,19 @@ void draw() {
     ellipse( displayWidth/2, displayHeight/2, 1000, 1000);
 
     //background Images
-
+    imageMode(CENTER);
     img = loadImage("planet1.png"); //planet
-    image(img, 100, 100);
+    img.resize(80500 / scale/2  , 80500 / scale/2 );
+    image(img, 500, 400);
     img = loadImage("Dstar.png");//deathstar
-    image(img, 600, 100);
+    img.resize(20500 / scale  , 20500 / scale );
+    image(img, 700, 300);
     img = loadImage("Tiefighters.gif");//tiefighters
-    image(img, 550, -70);
+    img.resize(10500 / scale  , 10500 / scale );
+    image(img, 750, -70);
+    imageMode(CORNER);
     img = loadImage("Xwing.png");//console
+    
     image(img, 100, 350);
 
     //Robots
@@ -80,6 +95,7 @@ void draw() {
     text("*boop*", 750, 200);
     fill(0, 102, 153, 51);
     text("*beep*", 750, 220);
+    
   } else if (scene == 2) { //scene2
 
     //background
@@ -91,28 +107,34 @@ void draw() {
     spencerRobot.drawAt(379, 404, 2.9, 2.9);
     benRobot.drawAt(759, 281, 0.4, 0.4);
     danielRobot.drawAt(666, 416, 0.2, 0.2);
-  } else if (scene == 3) { //scene3
+ 
+} else if (scene == 3) { //scene3
     noStroke();
     //background
     bg = loadImage("Bg3.jpg");
     background(bg);
 
-
     //robots
     timRobot.drawAt(540, 350, 1, 1.5); //robot 1
     spencerRobot.drawAt(200, 503, 5, 5);//robot2
-
+    
     img = loadImage("hair.gif"); //robot2 hair
     image(img, 550, 306);
-  } else if (scene == 4) { //scene3
-
+    
+  } else if (scene == 4) { //scene4
+scale2 ++;
+  
     bg = loadImage("endb.jpg");
     background(bg);
-    img = loadImage("end.png"); //robot2 hair
-    image(img, 330, 372);
+    imageMode(CENTER);
+    img = loadImage("end.png"); 
+    img.resize(4000 / scale2 , 3400 / scale2);
+    image(img, displayWidth/2, displayHeight/2);
+    imageMode(CORNER);
+    
   }
 }
 
-void keyPressed() {
+void keyPressed() { //advances scene on keypress
   scene += 1;
 }
