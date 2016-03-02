@@ -1,5 +1,4 @@
-import processing.sound.*;
-SoundFile file;
+
 PImage bg; //bg call
 PImage img;//image call
 int scene = 0;//scene call
@@ -7,6 +6,7 @@ int scale = 60;
 int scale2 = 0;
 PFont font;
 boolean pixelMode = true;
+
 //robot calls
 
 TMRobots timRobot = new TMRobots();
@@ -19,19 +19,20 @@ SCRobot spencerRobot = new SCRobot();
 
 void setup() {
   textMode(CENTER);
-  frameRate(600);
+  frameRate(6990);
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
   noStroke();
   font = createFont("galaxy.ttf", 32);
+  noCursor();
 }
 
 void draw() {
 
+    
   if (scene == 0) { //scene0
   // Load a soundfile from the /data folder of the sketch and play it back
-  file = new SoundFile(this, "theme.m3u");
-  file.play();
+  
 
   scale ++;
     bg = loadImage("endb.jpg");
@@ -59,11 +60,11 @@ void draw() {
     //background Images
     imageMode(CENTER);
     img = loadImage("planet1.png"); //planet
-    img.resize(80500 / scale/2  , 80500 / scale/2 );
+    img.resize(80500 / scale/2 , 80500 / scale/2);
     image(img, 500, 400);
     img = loadImage("Dstar.png");//deathstar
     img.resize(20500 / scale  , 20500 / scale );
-    image(img, 700, 300);
+    image(img, 700 , 300 );
     img = loadImage("Tiefighters.gif");//tiefighters
     img.resize(10500 / scale  , 10500 / scale );
     image(img, 750, -70);
@@ -99,6 +100,8 @@ void draw() {
     text("*boop*", 750, 200);
     fill(0, 102, 153, 51);
     text("*beep*", 750, 220);
+    rotate(.2);
+     
     
   } else if (scene == 2) { //scene2
 
@@ -111,7 +114,10 @@ void draw() {
     spencerRobot.drawAt(379, 404, 2.9, 2.9);
     benRobot.drawAt(759, 281, 0.4, 0.4);
     danielRobot.drawAt(666, 416, 0.2, 0.2);
- 
+ img = loadImage("logo.png"); //scene1 bg texture
+  imageMode(CENTER);
+    img.resize(10500 / scale  , 10500 / scale );
+    image(img, 100, 700); 
 } else if (scene == 3) { //scene3
     noStroke();
     //background
@@ -124,6 +130,10 @@ void draw() {
     
     img = loadImage("hair.gif"); //robot2 hair
     image(img, 550, 306);
+    img = loadImage("logo.png"); //scene1 bg texture
+  imageMode(CENTER);
+    img.resize(10500 / scale  , 10500 / scale );
+    image(img, 100, 700); 
     
   } else if (scene == 4) { //scene4
 scale2 ++;
@@ -136,7 +146,9 @@ scale2 ++;
     image(img, displayWidth/2, displayHeight/2);
     imageMode(CORNER);
     
+    
   }
+ 
 }
 
 void keyPressed() { //advances scene on keypress
