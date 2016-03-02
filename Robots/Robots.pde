@@ -18,8 +18,8 @@ JSSRobot smithRobot = new JSSRobot();
 SCRobot spencerRobot = new SCRobot();
 
 void setup() {
-  textMode(CENTER);
-  frameRate(6990);
+  
+  frameRate(60);
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
   noStroke();
@@ -35,11 +35,11 @@ void draw() {
   
 
   scale ++;
-    bg = loadImage("endb.jpg");
-    background(bg);
+   
+    background(5);
     img = loadImage("logo.png"); //scene1 bg texture
   imageMode(CENTER);
-    img.resize(40500 / scale  , 40500 / scale );
+    img.resize(90500 / scale/2  , 90500 / scale/2 );
     image(img, displayWidth/2, displayHeight/2);
     imageMode(CORNER);
     
@@ -129,7 +129,7 @@ void draw() {
     spencerRobot.drawAt(200, 503, 5, 5);//robot2
     
     img = loadImage("hair.gif"); //robot2 hair
-    image(img, 550, 306);
+    image(img, 641, 377);
     img = loadImage("logo.png"); //scene1 bg texture
   imageMode(CENTER);
     img.resize(10500 / scale  , 10500 / scale );
@@ -138,11 +138,11 @@ void draw() {
   } else if (scene == 4) { //scene4
 scale2 ++;
   
-    bg = loadImage("endb.jpg");
-    background(bg);
+    
+    background(5,20);
     imageMode(CENTER);
     img = loadImage("end.png"); 
-    img.resize(4000 / scale2 , 3400 / scale2);
+    img.resize(15052 / scale2/3 , 12400 / scale2/3);
     image(img, displayWidth/2, displayHeight/2);
     imageMode(CORNER);
     
