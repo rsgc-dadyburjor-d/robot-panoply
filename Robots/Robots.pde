@@ -1,4 +1,6 @@
 
+
+
 PImage bg; //bg call
 PImage img;//image call
 int scene = 0;//scene call
@@ -18,7 +20,6 @@ JSSRobot smithRobot = new JSSRobot();
 SCRobot spencerRobot = new SCRobot();
 
 void setup() {
-  
   frameRate(60);
   //fullScreen(); //1280x800
   size(displayWidth, displayHeight);
@@ -108,7 +109,7 @@ void draw() {
     //background
     bg = loadImage("Bg2.png");
     background(bg);
-    text("scene2", 200, 200);
+    
 
     //robots
     spencerRobot.drawAt(379, 404, 2.9, 2.9);
@@ -116,15 +117,16 @@ void draw() {
     danielRobot.drawAt(666, 416, 0.2, 0.2);
  img = loadImage("logo.png"); //scene1 bg texture
   imageMode(CENTER);
-    img.resize(10500 / scale  , 10500 / scale );
+    img.resize(100   , 100  );
     image(img, 100, 700); 
-} else if (scene == 3) { //scene3
+} else if (scene== 3) { //scene3
     noStroke();
     //background
     bg = loadImage("Bg3.jpg");
     background(bg);
 
     //robots
+     noStroke();
     timRobot.drawAt(540, 350, 1, 1.5); //robot 1
     spencerRobot.drawAt(200, 503, 5, 5);//robot2
     
@@ -132,7 +134,7 @@ void draw() {
     image(img, 641, 377);
     img = loadImage("logo.png"); //scene1 bg texture
   imageMode(CENTER);
-    img.resize(10500 / scale  , 10500 / scale );
+    img.resize(100   , 100  );
     image(img, 100, 700); 
     
   } else if (scene == 4) { //scene4
@@ -142,15 +144,20 @@ scale2 ++;
     background(5,20);
     imageMode(CENTER);
     img = loadImage("end.png"); 
-    img.resize(15052 / scale2/3 , 12400 / scale2/3);
+    img.resize(19052 / scale2/3 , 15400 / scale2/3);
     image(img, displayWidth/2, displayHeight/2);
     imageMode(CORNER);
-    
-    
+  }
+    else if (scene == 5) { 
+      scene = 0;
+      scale = 60;
+      scale2 = 0;
+    }
   }
  
-}
+
 
 void keyPressed() { //advances scene on keypress
   scene += 1;
+  
 }
